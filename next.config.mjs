@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  allowedDevOrigins: ['vm-intelligent-systems-portfolio.vusercontent.net'],
 }
 
 export default nextConfig
