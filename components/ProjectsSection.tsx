@@ -1,6 +1,7 @@
 'use client'
 
 import { ProjectCard } from './ProjectCard'
+import { FeaturedProject } from './FeaturedProject'
 
 const projects = [
   {
@@ -84,20 +85,40 @@ const projects = [
 ]
 
 export function ProjectsSection() {
+  const featuredProjects = [projects[0], projects[1]]
+  const gridProjects = projects.slice(2)
+
   return (
-    <section id="projects" className="py-20 px-6 border-t border-border-subtle">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
+    <section id="projects" className="border-t border-border-subtle">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="py-20">
+          <div className="mb-4">
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">02</span>
+          </div>
           <h2 className="text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
-          <p className="text-muted-foreground text-lg">
-            Engineering case studies demonstrating integrated systems thinking across hardware, software, and machine learning.
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Engineering case studies demonstrating integrated systems thinking across hardware, software, machine learning, robotics, and embedded systems.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+        {/* Featured Projects - Alternating Layout */}
+        <div className="space-y-0">
+          {featuredProjects.map((project, index) => (
+            <FeaturedProject
+              key={index}
+              {...project}
+              imagePosition={index % 2 === 0 ? 'right' : 'left'}
+            />
           ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {gridProjects.map((project, index) => (
+              <ProjectCard key={index + 2} {...project} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

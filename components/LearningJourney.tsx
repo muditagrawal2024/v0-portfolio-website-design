@@ -76,74 +76,60 @@ export function LearningJourney() {
     <section className="py-20 px-6 border-t border-border-subtle">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Engineering Roadmap</h2>
-          <p className="text-muted-foreground text-lg">
-            Progression of technical growth and systems thinking development.
+          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">04</div>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Engineering Evolution</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Progression of technical capability and systems thinking across embedded systems, machine learning, robotics, and software engineering.
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent-secondary to-accent-active transform -translate-x-1/2" />
-
-          {/* Milestones */}
-          <div className="space-y-12">
-            {milestones.map((milestone, index) => (
+        {/* Capability Evolution Timeline */}
+        <div className="space-y-6">
+          {milestones.map((milestone, index) => (
+            <div
+              key={index}
+              className="border-l-2 border-border-subtle pl-6 pb-6 relative group"
+              style={{
+                borderLeftColor: milestone.color + 'cc',
+              }}
+            >
+              {/* Timeline marker */}
               <div
-                key={index}
-                className={`flex items-start gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
-              >
-                {/* Content */}
-                <div className="flex-1 lg:w-1/2">
-                  <div className="p-8 bg-card border border-border rounded-lg hover:border-accent transition-colors duration-200">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div
-                        className="w-4 h-4 rounded-full flex-shrink-0 mt-1"
-                        style={{ backgroundColor: milestone.color }}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-foreground">{milestone.phase}</h3>
-                        <p className="text-sm text-accent mt-1">{milestone.period}</p>
-                      </div>
-                    </div>
+                className="absolute left-0 top-2 w-4 h-4 rounded-full -translate-x-2.5 border-2 border-background group-hover:scale-125 transition-transform duration-200"
+                style={{
+                  backgroundColor: milestone.color,
+                  borderColor: 'oklch(0.08 0 0)',
+                }}
+              />
 
-                    <p className="text-foreground mb-6 leading-relaxed">{milestone.description}</p>
-
-                    <div className="space-y-2">
-                      <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Key Achievements</p>
-                      <ul className="space-y-2">
-                        {milestone.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-3 text-sm text-foreground">
-                            <span className="text-accent-secondary flex-shrink-0 mt-1">→</span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+              {/* Content */}
+              <div className="pt-1">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
+                  <h3 className="text-lg font-semibold text-foreground">{milestone.phase}</h3>
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground">{milestone.period}</span>
                 </div>
 
-                {/* Spacer for timeline */}
-                <div className="hidden lg:flex w-1/2 items-start justify-center">
-                  <div className="w-16 h-16 rounded-full border-2 border-border bg-card flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full" style={{ backgroundColor: milestone.color }} />
-                  </div>
+                <p className="text-sm text-foreground/80 mb-4">{milestone.description}</p>
+
+                {/* Achievements */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {milestone.achievements.map((achievement, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs text-foreground/70">
+                      <span className="text-accent flex-shrink-0 font-bold">→</span>
+                      <span>{achievement}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Summary Statement */}
+        {/* Summary */}
         <div className="mt-16 pt-12 border-t border-border-subtle">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-foreground leading-relaxed">
-              This journey reflects a deliberate progression from foundational learning to integrated systems thinking.
-              Each phase built upon the previous, creating a comprehensive understanding of how machine learning, embedded
-              systems, robotics, and software engineering interconnect to create intelligent systems solving real-world
-              problems.
-            </p>
-          </div>
+          <p className="text-base text-foreground/90 leading-relaxed max-w-3xl">
+            Deliberate progression from foundational learning through hands-on engineering, research, and systems integration. Each phase built comprehensive understanding of how embedded systems, machine learning, robotics, control theory, and software engineering interconnect to create intelligent systems that solve real-world problems.
+          </p>
         </div>
       </div>
     </section>

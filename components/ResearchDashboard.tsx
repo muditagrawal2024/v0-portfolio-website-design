@@ -70,105 +70,89 @@ const researchProjects: ResearchProject[] = [
   },
 ]
 
-const openProblems = [
-  'How to design learning systems that are robust to distribution shift and adversarial inputs',
-  'Efficient methods for transferring learned models across heterogeneous hardware platforms',
-  'Real-time optimization under hard deadlines for physical systems',
-  'Principled integration of learning and classical control theory',
-]
-
 export function ResearchDashboard() {
   return (
     <section id="research" className="py-20 px-6 border-t border-border-subtle">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
+          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">03</div>
           <h2 className="text-4xl font-bold text-foreground mb-4">Research & Innovation</h2>
-          <p className="text-muted-foreground text-lg">
-            Active research projects, publications, and technical exploration in intelligent systems.
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Publications, research projects, and technical investigations in intelligent systems design and engineering.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Research Projects */}
-          <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-foreground mb-8">Research Projects</h3>
-            <div className="space-y-6">
-              {researchProjects.map((project, index) => (
-                <div key={index} className="p-6 bg-card border border-border rounded-lg">
-                  <div className="flex items-start gap-3 mb-3">
-                    <h4 className="text-lg font-semibold text-foreground flex-1">{project.title}</h4>
-                    <span
-                      className={`text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 ${
-                        project.status === 'active'
-                          ? 'bg-accent-secondary/20 text-accent-secondary'
-                          : 'bg-muted text-muted-foreground'
-                      }`}
-                    >
-                      {project.status}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.focus.map((tag, i) => (
-                      <span key={i} className="text-xs px-2 py-1 bg-accent/10 text-accent rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Publications Section */}
+        <div className="mb-20">
+          <div className="mb-10 pb-8 border-b border-border-subtle">
+            <h3 className="text-xl font-bold text-foreground">Publications</h3>
           </div>
-
-          {/* Publications */}
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-foreground mb-8">Publications</h3>
-            <div className="space-y-6">
-              {publications.map((pub, index) => (
-                <article key={index} className="p-6 bg-card border border-border rounded-lg hover:border-accent transition-colors duration-200">
-                  <div className="mb-4">
+          <div className="space-y-8">
+            {publications.map((pub, index) => (
+              <article key={index} className="border-b border-border-subtle pb-8 last:border-b-0 last:pb-0">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-3">
+                  <div className="flex-1">
                     <h4 className="text-lg font-semibold text-foreground mb-2">{pub.title}</h4>
-                    <div className="space-y-1 text-sm text-muted-foreground">
+                    <div className="space-y-0.5 text-sm text-muted-foreground">
                       <p>{pub.authors}</p>
                       <p>
-                        <span className="text-accent-secondary">{pub.venue}</span> • {pub.date}
+                        <span className="text-accent">{pub.venue}</span>
+                        <span className="mx-1">•</span>
+                        <span>{pub.date}</span>
                       </p>
                     </div>
                   </div>
-
-                  {pub.abstract && <p className="text-sm text-foreground mb-4 leading-relaxed">{pub.abstract}</p>}
-
-                  <div className="flex items-center gap-4">
-                    <span className="text-xs uppercase tracking-wider text-muted-foreground px-3 py-1 bg-muted rounded-full">
-                      {pub.type === 'paper' ? 'Research Paper' : pub.type === 'conference' ? 'Conference' : 'Technical Report'}
-                    </span>
-                    {pub.url && (
-                      <Link
-                        href={pub.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-semibold text-accent hover:text-accent-active transition-colors duration-200"
-                      >
-                        Read →
-                      </Link>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground px-3 py-1 bg-card border border-border-subtle rounded flex-shrink-0 self-start sm:self-center">
+                    {pub.type === 'paper' ? 'Paper' : pub.type === 'conference' ? 'Conference' : 'Technical Report'}
+                  </span>
+                </div>
+                {pub.abstract && (
+                  <p className="text-sm text-foreground/80 leading-relaxed mb-3">{pub.abstract}</p>
+                )}
+                {pub.url && (
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-accent hover:text-accent-active transition-colors duration-200"
+                  >
+                    View Publication →
+                  </a>
+                )}
+              </article>
+            ))}
           </div>
         </div>
 
-        {/* Open Problems */}
-        <div className="mt-16 pt-16 border-t border-border-subtle">
-          <h3 className="text-2xl font-bold text-foreground mb-8">Open Problems</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {openProblems.map((problem, index) => (
+        {/* Research Projects Section */}
+        <div>
+          <div className="mb-10 pb-8 border-b border-border-subtle">
+            <h3 className="text-xl font-bold text-foreground">Active Research</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {researchProjects.map((project, index) => (
               <div
                 key={index}
-                className="p-6 bg-card/50 border border-border rounded-lg hover:border-accent-secondary transition-colors duration-200"
+                className={`p-6 border rounded-lg ${
+                  project.status === 'active'
+                    ? 'border-accent/30 bg-card hover:border-accent/50'
+                    : 'border-border-subtle bg-card/30'
+                } transition-colors duration-200`}
               >
-                <p className="text-foreground leading-relaxed">{problem}</p>
+                <div className="mb-3">
+                  <h4 className="text-base font-semibold text-foreground mb-1">{project.title}</h4>
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                    {project.status === 'active' ? '● Active' : '○ Completed'}
+                  </p>
+                </div>
+                <p className="text-sm text-foreground/80 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.focus.map((tag, i) => (
+                    <span key={i} className="text-xs px-2 py-1 bg-accent/10 text-accent rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

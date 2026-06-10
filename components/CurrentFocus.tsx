@@ -29,45 +29,30 @@ const focusAreas = [
 
 export function CurrentFocus() {
   return (
-    <section className="py-20 px-6 border-t border-border-subtle">
+    <section className="py-16 px-6 border-t border-border-subtle">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Current Focus</h2>
-          <p className="text-muted-foreground text-lg">
-            Active areas of work and ongoing research directions shaping my engineering practice.
+        <div className="mb-10">
+          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">01</div>
+          <p className="text-muted-foreground text-sm max-w-2xl">
+            Active research and development directions in embedded AI, robotics, computer vision, and cyber-physical systems.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {focusAreas.map((area, index) => (
             <div
               key={index}
-              className="p-8 bg-card border border-border rounded-lg hover:border-accent transition-colors duration-200 group"
+              className="p-4 bg-card/50 border border-border-subtle rounded hover:border-accent/50 transition-colors duration-200 group"
             >
-              <h3 className="text-xl font-semibold text-foreground mb-6 group-hover:text-accent transition-colors duration-200">
-                {area.title}
-              </h3>
-
-              <div className="space-y-6">
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                    Current Objectives
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors duration-200 mb-2">
+                    {area.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                    {area.activeWork}
                   </p>
-                  <p className="text-sm text-foreground">{area.objectives}</p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                    Active Work
-                  </p>
-                  <p className="text-sm text-foreground">{area.activeWork}</p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                    Future Directions
-                  </p>
-                  <p className="text-sm text-foreground">{area.directions}</p>
                 </div>
               </div>
             </div>

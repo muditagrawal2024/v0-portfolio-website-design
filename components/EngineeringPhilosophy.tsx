@@ -2,9 +2,10 @@
 
 export function EngineeringPhilosophy() {
   return (
-    <section className="py-20 px-6 border-t border-border-subtle bg-card/30">
+    <section className="py-20 px-6 border-t border-border-subtle">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Engineering Philosophy</h2>
+        <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-6">Perspective</div>
+        <h2 className="text-4xl font-bold text-foreground mb-12">Engineering Philosophy</h2>
 
         <div className="space-y-8 text-lg leading-relaxed text-foreground">
           <p>
