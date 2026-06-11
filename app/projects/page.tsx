@@ -78,17 +78,17 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
-      <main className="pt-24 px-6">
+      <main className="pt-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="py-20">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">Projects</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
+          <div className="py-24">
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">Projects</h1>
+            <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
               Complete project archive showcasing engineering work in machine learning, robotics, computer vision, embedded systems, and intelligent systems design.
             </p>
           </div>
 
           {/* Featured Projects */}
-          <div className="space-y-0 mb-20">
+          <div className="mb-24">
             {featuredProjects.map((project, index) => (
               <FeaturedProject
                 key={index}
@@ -99,9 +99,9 @@ export default function ProjectsPage() {
           </div>
 
           {/* Project Grid */}
-          <div className="py-20 border-t border-border-subtle">
-            <h2 className="text-2xl font-bold text-foreground mb-12">Additional Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="py-24 border-t border-border-subtle/50">
+            <h2 className="text-2xl font-bold text-foreground mb-14">Additional Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {gridProjects.map((project, index) => (
                 <ProjectCard key={index + 2} {...project} />
               ))}

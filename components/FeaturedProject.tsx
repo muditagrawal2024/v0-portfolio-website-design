@@ -27,10 +27,10 @@ export function FeaturedProject({
   const isImageLeft = imagePosition === 'left'
 
   return (
-    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 px-6 border-t border-border-subtle`}>
-      {/* Image Container */}
-      <div className={isImageLeft ? 'order-1' : 'order-2'}>
-        <div className="relative aspect-square rounded-lg border border-border-subtle overflow-hidden bg-card/30">
+    <div className={`grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start py-20 px-6 border-t border-border-subtle`}>
+      {/* Image Container - 60% visual prominence */}
+      <div className={`${isImageLeft ? 'order-1 lg:col-span-2' : 'order-2 lg:col-span-2'}`}>
+        <div className="relative aspect-video rounded-lg border border-border-subtle overflow-hidden bg-card/30 shadow-lg hover:shadow-xl transition-shadow duration-300">
           <img
             src={image}
             alt={title}
@@ -42,29 +42,29 @@ export function FeaturedProject({
       </div>
 
       {/* Content Container */}
-      <div className={`space-y-6 ${isImageLeft ? 'order-2' : 'order-1'}`}>
-        <div>
-          <div className="text-accent text-sm font-semibold mb-2 uppercase tracking-wider">Case Study</div>
-          <h3 className="text-3xl font-bold text-foreground mb-3">{title}</h3>
-          <p className="text-lg text-muted-foreground">{overview}</p>
+      <div className={`space-y-6 lg:col-span-1 ${isImageLeft ? 'order-2' : 'order-1'}`}>
+        <div className="bg-card/50 rounded-lg p-6 border border-border-subtle/50">
+          <div className="text-accent text-xs font-semibold mb-3 uppercase tracking-wider">Case Study</div>
+          <h3 className="text-2xl font-bold text-foreground mb-2">{title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{overview}</p>
         </div>
 
         {/* Problem */}
-        <div className="pt-4 border-t border-border-subtle">
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Problem</h4>
-          <p className="text-foreground text-sm leading-relaxed">{problem}</p>
+        <div className="bg-card/30 rounded-lg p-4 border border-border-subtle/50">
+          <h4 className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Problem</h4>
+          <p className="text-foreground text-xs leading-relaxed">{problem}</p>
         </div>
 
         {/* Architecture */}
-        <div>
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Architecture</h4>
-          <p className="text-foreground text-sm leading-relaxed">{architecture}</p>
+        <div className="bg-card/30 rounded-lg p-4 border border-border-subtle/50">
+          <h4 className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Architecture</h4>
+          <p className="text-foreground text-xs leading-relaxed">{architecture}</p>
         </div>
 
         {/* Key Decisions */}
-        <div>
-          <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Engineering Decisions</h4>
-          <p className="text-foreground text-sm leading-relaxed">{keyDecisions}</p>
+        <div className="bg-card/30 rounded-lg p-4 border border-border-subtle/50">
+          <h4 className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Engineering Decisions</h4>
+          <p className="text-foreground text-xs leading-relaxed">{keyDecisions}</p>
         </div>
 
         {/* Technologies */}

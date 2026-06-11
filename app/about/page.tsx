@@ -73,14 +73,14 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
 
-      <main className="pt-24 px-6">
+      <main className="pt-32 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Philosophy Section */}
-          <div className="py-20">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">Engineering Philosophy</h1>
-            <p className="text-lg text-muted-foreground mb-12">Perspective on building intelligent systems</p>
+          <div className="py-24">
+            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-3 text-balance">Engineering Philosophy</h1>
+            <p className="text-base text-muted-foreground mb-14">Perspective on building intelligent systems</p>
 
-            <div className="max-w-4xl space-y-8 text-lg leading-relaxed text-foreground/90">
+            <div className="max-w-3xl space-y-7 text-base leading-relaxed text-foreground/90">
               <p>
                 Intelligent systems emerge when software, machine learning, hardware, and automation are designed as a{' '}
                 <span className="text-accent font-semibold">single integrated system</span> rather than independent
@@ -102,48 +102,43 @@ export default function AboutPage() {
 
               <p>This means:</p>
 
-              <ul className="space-y-4 pl-6">
-                <li className="flex gap-4">
-                  <span className="text-accent flex-shrink-0 mt-1 font-bold">→</span>
-                  <span>
-                    <strong>Hardware-aware AI:</strong> Understanding how model architecture, quantization, and inference
-                    methods interact with embedded systems capabilities
+              <ul className="space-y-3 pl-4 bg-card/20 rounded-lg p-5 border border-border-subtle/40">
+                <li className="flex gap-3">
+                  <span className="text-accent flex-shrink-0 font-semibold">→</span>
+                  <span className="text-sm">
+                    <strong>Hardware-aware AI:</strong> Understanding how model architecture, quantization, and inference methods interact with embedded systems capabilities
                   </span>
                 </li>
-                <li className="flex gap-4">
-                  <span className="text-accent flex-shrink-0 mt-1 font-bold">→</span>
-                  <span>
-                    <strong>Physics-informed software:</strong> Designing control algorithms that account for real-world
-                    dynamics, latency, and sensor noise
+                <li className="flex gap-3">
+                  <span className="text-accent flex-shrink-0 font-semibold">→</span>
+                  <span className="text-sm">
+                    <strong>Physics-informed software:</strong> Designing control algorithms that account for real-world dynamics, latency, and sensor noise
                   </span>
                 </li>
-                <li className="flex gap-4">
-                  <span className="text-accent flex-shrink-0 mt-1 font-bold">→</span>
-                  <span>
-                    <strong>Systems thinking:</strong> Anticipating how changes in one subsystem propagate and affect
-                    overall behavior
+                <li className="flex gap-3">
+                  <span className="text-accent flex-shrink-0 font-semibold">→</span>
+                  <span className="text-sm">
+                    <strong>Systems thinking:</strong> Anticipating how changes in one subsystem propagate and affect overall behavior
                   </span>
                 </li>
               </ul>
 
-              <p>
-                This integrated approach requires deep technical knowledge across multiple domains, but more importantly,
-                it requires the discipline to understand where boundaries exist and why they matter.
+              <p className="text-sm">
+                This integrated approach requires deep technical knowledge across multiple domains, but more importantly, it requires the discipline to understand where boundaries exist and why they matter.
               </p>
 
-              <p className="text-muted-foreground italic border-l-4 border-accent pl-6 py-4">
-                "The best engineering is often invisible—not because it's hidden, but because the system works so well
-                that its complexity disappears."
+              <p className="text-muted-foreground italic border-l-4 border-accent pl-6 py-4 bg-card/20 rounded text-sm leading-relaxed">
+                "The best engineering is often invisible—not because it's hidden, but because the system works so well that its complexity disappears."
               </p>
             </div>
           </div>
 
           {/* Engineering Evolution */}
-          <div className="py-20 border-t border-border-subtle">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">Engineering Evolution</h2>
-            <p className="text-lg text-muted-foreground mb-12">Progression of technical capability and systems thinking</p>
+          <div className="py-24 border-t border-border-subtle/50">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-3 text-balance">Engineering Evolution</h2>
+            <p className="text-base text-muted-foreground mb-14">Progression of technical capability and systems thinking</p>
 
-            <div className="space-y-6 max-w-4xl">
+            <div className="space-y-6 max-w-3xl">
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
@@ -160,18 +155,18 @@ export default function AboutPage() {
                     }}
                   />
 
-                  <div className="pt-1">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                      <h3 className="text-lg font-semibold text-foreground">{milestone.phase}</h3>
-                      <span className="text-xs uppercase tracking-wider text-muted-foreground">{milestone.period}</span>
+                  <div className="pt-0">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                      <h3 className="text-base font-semibold text-foreground">{milestone.phase}</h3>
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">{milestone.period}</span>
                     </div>
 
-                    <p className="text-sm text-foreground/80 mb-4">{milestone.description}</p>
+                    <p className="text-xs text-foreground/75 mb-3 leading-relaxed">{milestone.description}</p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                       {milestone.achievements.map((achievement, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-foreground/70">
-                          <span className="text-accent flex-shrink-0 font-bold">→</span>
+                          <span className="text-accent flex-shrink-0 font-semibold">→</span>
                           <span>{achievement}</span>
                         </div>
                       ))}
@@ -181,12 +176,9 @@ export default function AboutPage() {
               ))}
             </div>
 
-            <div className="mt-16 pt-12 border-t border-border-subtle max-w-4xl">
-              <p className="text-base text-foreground/90 leading-relaxed">
-                Deliberate progression from foundational learning through hands-on engineering, research, and systems
-                integration. Each phase built comprehensive understanding of how embedded systems, machine learning,
-                robotics, control theory, and software engineering interconnect to create intelligent systems that solve
-                real-world problems.
+            <div className="mt-14 pt-14 border-t border-border-subtle/50 max-w-3xl">
+              <p className="text-sm text-foreground/85 leading-relaxed">
+                Deliberate progression from foundational learning through hands-on engineering, research, and systems integration. Each phase built comprehensive understanding of how embedded systems, machine learning, robotics, control theory, and software engineering interconnect to create intelligent systems that solve real-world problems.
               </p>
             </div>
           </div>

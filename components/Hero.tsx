@@ -19,12 +19,12 @@ export function Hero() {
               </div>
 
               {/* Social Links */}
-              <div className="mt-6 sm:mt-8 flex items-center gap-6">
+              <div className="mt-6 sm:mt-8 flex items-center gap-7">
                 <a
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-semibold text-muted-foreground hover:text-accent transition-colors duration-200"
+                  className="text-xs font-semibold text-muted-foreground hover:text-accent transition-all duration-200 hover:opacity-80"
                 >
                   GitHub
                 </a>
@@ -32,13 +32,13 @@ export function Hero() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-semibold text-muted-foreground hover:text-accent transition-colors duration-200"
+                  className="text-xs font-semibold text-muted-foreground hover:text-accent transition-all duration-200 hover:opacity-80"
                 >
                   LinkedIn
                 </a>
                 <a
                   href="mailto:contact@example.com"
-                  className="text-sm font-semibold text-muted-foreground hover:text-accent transition-colors duration-200"
+                  className="text-xs font-semibold text-muted-foreground hover:text-accent transition-all duration-200 hover:opacity-80"
                 >
                   Email
                 </a>
@@ -52,16 +52,16 @@ export function Hero() {
             </div>
 
             {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2 sm:pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
               <Link
                 href="/projects"
-                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent-active transition-colors duration-200 text-center text-sm sm:text-base"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent-active hover:shadow-md transition-all duration-200 text-center text-xs sm:text-sm active:scale-95"
               >
                 Explore Work
               </Link>
               <Link
                 href="/research"
-                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-transparent border border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-colors duration-200 text-center text-sm sm:text-base"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-transparent border border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 hover:border-accent/80 transition-all duration-200 text-center text-xs sm:text-sm active:scale-95"
               >
                 View Research
               </Link>
