@@ -38,20 +38,20 @@ export default function Home() {
       <Hero />
 
       {/* Areas of Focus */}
-      <section className="py-20 px-6 border-t border-border-subtle bg-gradient-to-br from-background via-background to-card/10">
+      <section className="py-24 px-6 border-t border-border-subtle/50">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
+          <div className="mb-14">
             <h2 className="text-2xl font-bold text-foreground mb-2">Areas of Focus</h2>
             <p className="text-muted-foreground text-sm">Primary engineering domains and research interests</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {focusAreas.map((area, i) => (
-              <div key={i} className="p-6 bg-card/40 border border-border-subtle/60 rounded-lg hover:bg-card/60 hover:border-border-subtle transition-all duration-200">
+              <div key={i} className="p-6 bg-card/35 border border-border-subtle/50 rounded-lg hover:bg-card/50 hover:border-border-subtle/60 transition-all duration-200">
                 <div className="flex items-start gap-3 mb-3">
                   <div className="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0" />
                   <h3 className="text-sm font-semibold text-foreground">{area.title}</h3>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed ml-5">{area.description}</p>
+                <p className="text-xs text-foreground/70 leading-relaxed ml-5">{area.description}</p>
               </div>
             ))}
           </div>
@@ -59,9 +59,9 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 px-6 border-t border-border-subtle">
+      <section className="py-24 px-6 border-t border-border-subtle/50">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-14">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-2">Featured Projects</h2>
               <p className="text-muted-foreground text-sm">Engineering case studies and technical work</p>
@@ -70,11 +70,11 @@ export default function Home() {
               View All →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {featuredProjects.map((project, i) => (
               <Link key={i} href={project.link} className="group flex flex-col">
-                {/* Image - Primary visual element */}
-                <div className="overflow-hidden rounded-lg mb-5 bg-card border border-border-subtle group-hover:border-accent/50 transition-colors duration-200 shadow-md group-hover:shadow-lg transition-shadow duration-200 flex-1">
+                {/* Image - Engineering artifact */}
+                <div className="overflow-hidden rounded-lg mb-5 bg-card/30 border border-border-subtle/50 group-hover:border-border-subtle/70 transition-all duration-200 shadow-sm group-hover:shadow-md flex-1">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -83,9 +83,9 @@ export default function Home() {
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                {/* Text - Secondary element */}
-                <h3 className="text-base font-semibold text-foreground group-hover:text-accent transition-colors mb-2">{project.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{project.summary}</p>
+                {/* Text - Clear hierarchy */}
+                <h3 className="text-base font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
+                <p className="text-xs text-foreground/70 leading-relaxed">{project.summary}</p>
               </Link>
             ))}
           </div>
@@ -93,9 +93,9 @@ export default function Home() {
       </section>
 
       {/* Research Highlights */}
-      <section className="py-20 px-6 border-t border-border-subtle">
+      <section className="py-24 px-6 border-t border-border-subtle/50">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-14">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-2">Research Highlights</h2>
               <p className="text-muted-foreground text-sm">Selected publications and active investigations</p>
@@ -104,15 +104,15 @@ export default function Home() {
               View All →
             </Link>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {featuredResearch.map((item, i) => (
               <Link
                 key={i}
                 href="/research"
-                className="block p-5 bg-card/30 border border-border-subtle/60 rounded-lg hover:bg-card/50 hover:border-border-subtle transition-all duration-200 group"
+                className="block p-5 bg-card/35 border border-border-subtle/50 rounded-lg hover:bg-card/50 hover:border-border-subtle/60 transition-all duration-200 group"
               >
-                <h4 className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-2 leading-snug">{item.title}</h4>
-                <p className="text-xs text-muted-foreground">
+                <h4 className="text-sm font-semibold text-foreground mb-2 leading-snug group-hover:text-accent transition-colors">{item.title}</h4>
+                <p className="text-xs text-foreground/65">
                   {item.venue} • {item.year}
                 </p>
               </Link>
@@ -122,9 +122,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 border-t border-border-subtle">
+      <footer className="py-20 px-6 border-t border-border-subtle/50">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider">
+          <p className="text-xs text-foreground/50 uppercase tracking-wider font-medium">
             © 2024 Intelligent Systems Engineer. Designed and built with precision.
           </p>
         </div>
