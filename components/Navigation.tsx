@@ -15,11 +15,10 @@ export function Navigation() {
   }, [])
 
   const navLinks = [
-    { label: 'Work', href: '#projects' },
-    { label: 'Research', href: '#research' },
-    { label: 'Systems', href: '#competency' },
-    { label: 'Writing', href: '#publications' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Research', href: '/research' },
+    { label: 'About', href: '/about' },
+    { label: 'Resume', href: '/resume.pdf' },
   ]
 
   return (
@@ -37,21 +36,21 @@ export function Navigation() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Mobile Navigation Links */}
         <div className="md:hidden flex items-center gap-3">
-          <a href="#projects" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Work</a>
-          <a href="#research" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Research</a>
-          <a href="#contact" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+          <Link href="/projects" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Projects</Link>
+          <Link href="/research" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Research</Link>
+          <Link href="/about" className="text-xs text-muted-foreground hover:text-foreground transition-colors">About</Link>
         </div>
       </nav>
     </header>
